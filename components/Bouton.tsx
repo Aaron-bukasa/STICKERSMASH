@@ -7,7 +7,7 @@ type Props = {
     onPress?: () => void;
 }
 
-export function Button({ label, theme, onPress }: Props) {
+export default function Button({ label, theme, onPress }: Props) {
 
     if (theme === "primary") {
         return (
@@ -21,7 +21,7 @@ export function Button({ label, theme, onPress }: Props) {
     }
     return (
         <View style={styles.buttonContainer}>
-            <Pressable onPress={() => alert("Vous avez cliquer sur un button")} style={styles.button}>
+            <Pressable onPress={onPress} style={styles.button}>
                 <Text style={styles.buttonLabel}>{label}</Text>
             </Pressable>
         </View>
